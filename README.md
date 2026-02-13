@@ -1,58 +1,67 @@
-Trader Performance vs Market Sentiment
-Objective
+# Trader Performance vs Market Sentiment
 
-Analyze how Bitcoin market sentiment (Fear/Greed) relates to trader behavior and performance on Hyperliquid. Identify behavioral patterns and propose actionable strategy recommendations.
+## Objective
 
-Dataset
+Analyze how Bitcoin market sentiment (Fear/Greed) relates to trader behavior and performance on Hyperliquid.  
+Identify behavioral patterns and propose actionable strategy recommendations.
 
-Bitcoin Market Sentiment (Fear/Greed Index)
+---
 
-Historical Trader Data (Hyperliquid)
+## Datasets
 
-Methodology
+- Bitcoin Market Sentiment (Fear/Greed Index)
+- Historical Trader Data (Hyperliquid)
 
-Cleaned and aligned datasets at daily level
+---
 
-Aggregated trade-level data into daily trader metrics
+## Methodology
 
-Merged sentiment classification with trader activity
+- Cleaned and aligned datasets at daily level  
+- Aggregated trade-level data into daily trader metrics  
+- Merged sentiment classification with trader activity  
+- Conducted statistical testing (t-tests)  
+- Segmented traders by:
+  - Activity level  
+  - Exposure level  
+  - PnL consistency  
 
-Conducted statistical testing (t-tests)
+---
 
-Segmented traders by:
+## Key Insights
 
-Activity level
+- Profitability does not significantly differ between Fear and Greed regimes.
+- Trading behavior changes significantly across sentiment regimes.
+- High activity traders consistently outperform.
+- Exposure amplifies performance primarily during Greed regimes.
+- Higher volatility traders achieve higher returns but with lower win rates.
 
-Exposure level
+---
 
-PnL consistency
+## Strategy Recommendations
 
-Built a simple logistic regression model to predict next-day profitability
+### 1. Sentiment-Based Exposure Adjustment
 
-Key Insights
+Allow higher exposure during Greed regimes while tightening exposure controls during Fear regimes.
 
-Profitability does not significantly differ between Fear and Greed regimes.
+### 2. Segment-Based Risk Profiling
 
-Trading behavior changes significantly across sentiment regimes.
+Apply differentiated risk management rules based on trader activity, exposure, and volatility profile rather than uniform controls.
 
-High activity traders consistently outperform.
+---
 
-Exposure amplifies performance primarily during Greed regimes.
+## Bonus – Predictive Model
 
-Higher volatility traders achieve higher returns but with lower win rates.
+A logistic regression model was trained to predict next-day profitability using sentiment and behavioral features.
 
-Strategy Recommendations
+- Accuracy: ~63%
+- ROC AUC: ~0.63%
 
-Implement sentiment-aware exposure adjustment.
+---
 
-Apply segment-based risk profiling rather than uniform risk controls.
+## How to Run
 
-Bonus Model
+Install dependencies:
 
-A logistic regression model achieved:
+pip install -r requirements.txt
 
-Accuracy ≈ 63%
-
-ROC AUC ≈ 0.63
-
-Indicating modest predictive signal from sentiment and behavioral features.
+Run the notebook from top to bottom.
